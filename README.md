@@ -2,13 +2,28 @@
 Use Twilio to call all members on a calling list.
 
 
-Step 1: modify call.py with necessary Twilio credentials
+Step 1: Create a settings.py file containing the following with Twilio credentials filled in:
 
-Step 2: create a calling list separated by a new line including country code
+TEST = {
+	'SID':"xxxxxxxxxxxxxxxxxxxxxxxx",
+	'ATOKEN':"xxxxxxxxxxxxxxxxxxxxxxxx",
+	'PHONE':"+xxxxxxxxx"
+}
 
-Step 3: run start.sh to create server and tunnel IP by ngrok
+REAL = {
+	'SID':"xxxxxxxxxxxxxxxxxxxxxxxx",
+	'ATOKEN':"xxxxxxxxxxxxxxxxxxxxxxxx",
+	'PHONE':"+xxxxxxxxx"
+}
 
-Step 4: run call.sh. It will ask you for the group name.
-        For example you have have a text file called family.txt, the group name would be family
-        It will then proceed to ask you for the amount of times to call everyone on the list
-        and the pause time between iteration.
+MESSAGE = {
+	'SAY':"Message goes here. "
+}
+
+Step 2: Run run.py
+
+Step 3: In a separate terminal run the command "ngrok http 5000" 
+
+Step 4: Run get_tun.py
+
+Step 5: Run call.py

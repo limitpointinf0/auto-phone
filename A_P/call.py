@@ -1,10 +1,13 @@
 import datetime
 import traceback
+from settings import *
+from twilio.rest import Client
+import time
 
 # Your Account Sid and Auth Token from twilio.com/user/account
-account_sid = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-auth_token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-phone_no = "XXXXXXXXXXXX"
+account_sid = REAL['SID']
+auth_token = REAL['ATOKEN']
+phone_no = REAL['PHONE']
 client = Client(account_sid, auth_token)
 
 def call_them(start_time, call_list, interval=300, times=5):

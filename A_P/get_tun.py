@@ -8,5 +8,5 @@ with open('tunnels.json') as data_file:
 
 url = datajson['tunnels'][0]['public_url']
 
-with open('url.txt','w') as f:
+with open('url.txt','w+') as f:
     f.write(url)
