@@ -1,14 +1,14 @@
 from flask import Flask
 from twilio.twiml.voice_response import VoiceResponse
-from settings import *
+import os
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
-def hello_monkey():
+def hello_hello():
     """Respond to incoming requests."""
     resp = VoiceResponse()
-    msg = MESSAGE['SAY']
+    msg = os.environ['TWL_VMESS']
     resp.say(msg*3)
     return str(resp)
 
